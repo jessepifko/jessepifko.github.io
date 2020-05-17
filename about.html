@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+	<head>
+		<title>My Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="mailto: jessepifko@gmail.com" class="logo">JESSEPIFKO@GMAIL.COM</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Main</a></li>
+							<li class="active"><a href="about.html">About</a></li>
+							<li><a href="map.html">Hometown</a></li>
+							<li><a href="https://www.linkedin.com/in/jessepifko" target="_blank">LinkedIn</a></li>
+							<li><a href="https://www.github.com/jessepifko" target="_blank"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>About Me</h1>
+								</header>
+
+								<!-- Text stuff -->
+									<h2>Bio</h2>
+								<p>
+										I grew up in a suburb of Detroit called Warren. My childhood was spent running around 
+										outside with the neighborhood boys, learning about computers, and playing video games. 
+										I attended high school at Center Line High in Center Line, Michigan. My fondest memories 
+										of high school were in the computer science labs working on projects for my teacher. It 
+										was here where I learned how to code in HTML, CSS, & Javascript.
+										<br><br>
+										Due to my family situation at home, I was forced to get a job in highschool to help out. 
+										My first job was as a dish washer in a catering hall on the weekends. My junior year I got
+										 a job as an assistant butcher where I learned how to prep the meat counters and clean the
+										  equipment. Senior year I got referred by a friend to start working in Construction. I quickly
+										   learned that I did not want to spend my career breaking my back and decided to go to college.
+										<br><br>
+										I started out attending night school at Baker College while continuing to work my construction job. 
+										After feeling like I wasn't getting everything I wanted out of college, I decided to transfer to 
+										Central Michigan University where I knew a few people attending. At Central Michigan I quickly learned that 
+										the community there was a world of its own. During the start of my time here, I spent many hours on campus getting 
+										involved in university politics and the start up scene through the College of Business and Entrepeneurship. 
+										It was during this time I learned a ton about start ups, business development, and myself. Although I graduated with 
+										a degree in Communications, I very much felt like I got an education in business leadership and entrepeneurship.
+										<br><br>
+										
+								</p>
+										
+			<!--Google Maps APi-->
+					</div>
+					<div id="map"></div>
+					<script>
+					function initMap(){
+						var location = {lat: 42.331429, lng: -83.045753};
+						var map = new google.maps.Map(
+							document.getElementById("map"), {zoom: 4, center: location}
+						);
+						var marker = new google.maps.Marker({position: location, map: map});
+						</script>
+						<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdccavbGnoIGMkD_OkGAhxMKAlTC5FkWA&callback=initMap">
+						</script>
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+								<h3>Email</h3>
+								<p><a href="mailto: jessepifko@gmail.com">jessepifko@gmail.com</a></p>
+							</section>
+					</footer>
+
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>&copy; 2020 All Rights Reserved</li>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
