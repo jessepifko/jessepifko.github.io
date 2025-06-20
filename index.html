@@ -35,31 +35,28 @@
 	</head>
 	<body lang="en" class="is-preload">
         <div id="wrapper" class="fade-in">
+
+
+	<script> 
+			function copyToClipboard() {
+            const text = document.getElementById("textToCopy").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("You copied Jesse's email!");
+            }).catch(err => {
+                console.error("Failed to copy text: ", err);
+            });
+        }
+	</script>
             
 
             <!-- Intro -->
                 <div id="intro">
-                    <h2>Brother, Husband, Father, <br>Your Next New Hire?</h2> 
+                    <h2>Son, Brother, Husband, Father, <br><i>Your Next New Hire?</i></h2> 
 					<img width="30%vw" height="30%vh" src="/images/jesse_career.jpg"><br>
 					<h3>Meet Jesse D. Pifko</h3><br><br><br><br>
-					<h1>Greetings!</h1>
-					<!--<a href="https://www.linkedin.com/in/jessepifko"><img src="images/Signature.png" width="60%vw" height="60%vh"></a>
-			     <br><br> --->
-                 <!--     
-				 <ul>
-							<a ><li class="button icon solid solo fa-arrow-down scroll::before"></li></a>
-						</ul>
-						<h4><a href="https://youtu.be/lxLnT104dTA" target="_blank">Jesse's Testimony</a></h4>-->
                 </div> 
 
 		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-                        <a href="mailto:jessepifko@icloud.com?subject=Your%20Next%20Opportunity&body=Jesse,%20I'd%20like%20to%20discuss%20an%20opportunity%20with%20you.%20When%20are%20you%20available?" class="logo">Quality is Life.<br>Click to agree</a>
-					</header>
-
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
@@ -77,22 +74,21 @@
 							<section class="post">
 								<table>
 									<tr>
-										<center><h2>Connect to share opportunities</h2></center>
+										<h2><center>Connect and share an opportunity</center></h2>
 									</tr>
 								</table>
 								<!-- Text stuff -->
-                                    <h3>Seeking Roles in Quality Assurance</h3>
-                                    <p>Jesse D. Pifko, a dedicated and hardworking professional, is well learned and has seen many market sectors. From Industrials, to Technology, to Telecom and Consumer Discretionary, Jesse is versitile in his approach to adding value having a wide array of perspectives to share. Inspired by many of the great career people who came before, Jesse aims to deliver excellence with each passing day.</p>
+                                    <h3>Seeking Role in Software Quality</h3>
+                                    <p>Jesse Pifko, a forward thinking and initiative taking professional seeking to refine software testing skills with the aim of receiving board certification. Jesse stands for peace, life, and challenging the status quo. Help him to live these values daily by promoting harmony, truth, and liberty in the workplace. Jesse’s most valuable assets are his insatiable curiosity, work ethic, and discipline. Well rounded and learned, Jesse has seen various markets ranging from Industrials, to Technology, to Telecom and Consumer Discretionary. Inspired by many of the great career people who came before, Jesse aims to deliver excellence with each passing day seeking to positively contribute to a software team.</p>
 									
 									<div style="display: flex; justify-content: left;"> 
 										<img src="images/Signature.png" width="300px" height="150px">
 									</div>
 									<br>
-										<button id="learn"><a href="mailto:jessepifko@icloud.com">Extend Invite to Connect</a></button> 
+										<button onclick="copyToClipboard()"><p id="textToCopy">jessepifko@icloud.com</p></button> 
+										<p><i>(Click to copy email)</i></p>
 							</section>
 					</div>
-							
-
 				<!-- Footer -->
 			
 
