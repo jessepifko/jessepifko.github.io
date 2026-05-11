@@ -254,5 +254,32 @@
 			});
 
 		}
+})(jQuery);
 
+// Initialize timeline plugin if available
+(function($){
+	$(function(){
+		if ($.fn && $.fn.timeline) {
+			// Ensure plugin treats wide viewports as non-mobile so items alternate
+			var fv = 480;
+			$('.timeline').timeline({ forceVerticalMode: fv });
+
+			// Fallback: if plugin didn't add right-side classes, apply alternating classes
+			$(window).on('load', function(){
+				var $items = $('.timeline .timeline__item');
+				if (window.innerWidth > fv) {
+					if ($items.filter('.timeline__item--right').length === 0) {
+						$items.each(function(i, el){
+							$(el).removeClass('timeline__item--left timeline__item--right');
+							if (i % 2 === 0) $(el).addClass('timeline__item--left');
+							else $(el).addClass('timeline__item--right');
+						});
+					}
+				} else {
+					// mobile: ensure all items are left (full-width)
+					$items.removeClass('timeline__item--right').addClass('timeline__item--left');
+				}
+			});
+		}
+	});
 })(jQuery);

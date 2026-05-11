@@ -12,6 +12,25 @@
   margin: 0 auto;
 }
 
+/* Timeline reveal animation (for .timeline__item/.timeline__content) */
+.timeline__item .timeline__content {
+	opacity: 0;
+	transform: translateY(18px) scale(0.995);
+	transition: opacity 0.6s cubic-bezier(.2,.9,.2,1), transform 0.6s cubic-bezier(.2,.9,.2,1);
+	will-change: opacity, transform;
+}
+
+.timeline__item.is-visible .timeline__content {
+	opacity: 1;
+	transform: none;
+}
+
+/* Make sure items themselves accept transition delay applied from JS */
+.timeline__item {
+	transition: none;
+}
+
+
 #thalignment {
 	padding-top: 3%;
 }
@@ -399,6 +418,34 @@ input, select, textarea {
 		.row > .col-3 {
 			width: 25%;
 		}
+
+/* Strengths section layout */
+.strengths{
+	display:flex;
+	flex-direction:column;
+	gap:1.5rem;
+	max-width:900px;
+	margin:0 auto;
+	padding:1rem 1rem 2rem;
+	align-items:center;
+}
+.strength{
+	width:100%;
+	max-width:760px;
+	background:transparent;
+}
+.strength{ text-align:center; }
+.strength h1, .strength h2 { display:block; width:100%; text-align:center !important; margin-bottom:0.5rem; }
+.strength .tags{ text-align:center; margin-bottom:1rem; }
+.strength .icons{ display:flex; gap:1rem; justify-content:center; margin-top:1rem; }
+.strength .icons img{ width:90px; height:auto; display:block; }
+
+@media (max-width: 900px){
+	.strengths{ padding:0.5rem; gap:1rem }
+	.strength{ width:100%; max-width:100% }
+	.strength .icons img{ width:64px }
+}
+
 
 		.row > .off-3 {
 			margin-left: 25%;

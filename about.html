@@ -33,25 +33,28 @@
 			}
 
 			</style>
+			<link href="dist/css/timeline.min.css" rel="stylesheet" />
 	</head>
 	<body lang="en" class="is-preload">
+
+
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<a href="mailto:jessepifko@icloud.com?subject=Your%20Next%20Opportunity&body=Jesse,%20I%20looked%20at%20your%20wins%20page%20on%20your%20portfolio%20site%20and%20would%20like%20to%20learn%20more.%20When%20are%20you%20available%20to%20connect?" class="logo">Learn More</a>
+					<header id="header">	
+					<a href="https://www.linkedin.com/in/jessepifko" target="_blank" class="logo">Connect on Linkedin</a>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="index.html">Intent</a></li>
-							<li class="active"><a href="about.html">Achievements</a></li>
-							<li><a href="certificates.html">Credentials</a></li>
-							<li><a href="projects.html">Projects</a></li>
-							<li><a href="skills.html">Skills</a></li>
+							<li><a href="index.html">Strengths</a></li>
+							<li class="active"><a href="about.html">Story Arc</a></li>
+							<li><a href="certificates.html">Results</a></li>
+                            <li><a href="projects.html">Philosophy</a></li>
+							<li><a href="skills.html">Gifts</a></li>
 						</ul>
 					</nav>
 
@@ -60,36 +63,106 @@
 						<!-- Post -->
 						<header class="minor">
 								<!-- Text stuff -->
-								<section class="wins">
-									<table>
-										<tr>
-											<td>
-												<a href="https://www.uwm.com"><img src="images/uwm.webp" alignment="center" width="100%vw" height="100%vh"></a><br>
-												<center><h3>~$80,000.00 saved annually through Robotic Process Automation (RPA).</h3></center>
-												<center><button><a href="http://www.uipath.com"><p><u>Tooling</u></p></a></button></center>
-											</td>											
-										</tr>
-									</table>
-										<br<br><br>
-										<table>
-											<tr>
-												<td>
-													<a href="https://www.ford.com"><img src="images/ford.webp" alignment="center" width="100%vw" height="100%vh"></a>
-													<center><h3>~130 man hours saved annually through internal process automation.</h3></center>
-													<center><button><a href="https://www.microsoft.com/en-us/power-platform/products/power-automate/?culture=en-us&country=us"><p><u>Tooling</u></p></a></button></center>
-												</td>											
-											</tr>
-										</table>
-										<br<br><br>
-										<table>
-											<tr>
-												<td>
-													<img src="images/kaizen.jpg" alignment="center" width="100%vw" height="100%vh">
-													<center><h3>First generation college graduate.</h3></center>
-												</td>											
-											</tr>
-										</table>
-											
+								<section class="wins"> 
+<div class="timeline" data-force-vertical-mode="480">
+  <div class="timeline__wrap">
+    <div class="timeline__items">
+      <div class="timeline__item">
+        <div class="timeline__content">
+			<h3>Youth</h3>
+			<p>Collected Match Box cars as a child and developed an admiration for vehicle performance and design.</p>
+        </div>
+      </div>
+	  <div class="timeline__item">
+        <div class="timeline__content">
+			<h3>Teen</h3>
+			<p> Purchased my first vehicle at 16 years old with money I saved up from my High School job, and have been passionate about the automotive industry ever since. </p>
+		</div>
+	  </div>
+      <div class="timeline__item">
+        <div class="timeline__content">
+			<h3>2018</h3>
+         Acquired two years of professional sales experience before COVID-19 forced a career pivot.  
+		</div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__content">
+			<h3>2020</h3>
+          Got certified as a Goal Setting Coach and Meeting Facilitator, while also completing a technical education in back and front-end development.
+        </div>
+      </div>
+			<div class="timeline__item">
+				<div class="timeline__content">
+					<h3>2023</h3>
+					Transitioned into a leadership role, managing the planning, development, and maintenance of a Microsoft tool for Ford's Mobile Service program.
+				</div>
+			</div>
+			<div class="timeline__item">
+				<div class="timeline__content">
+					<h3>2025</h3>
+					Continuing professional growth through General Motors as a Subject Matter Expert for their Service Operations team, while also exploring roles that combine product and operations. 
+				</div>
+			</div>
+			<div class="timeline__item">
+				<div class="timeline__content">
+					<h3>Present Day</h3>
+					
+						Currently seeking a role that allows me to leverage my strengths and gifts, while also providing opportunities for growth and development.
+					
+				</div>
+			</div>
+    </div>
+  </div>
+</div>
+
+				</section>
+
+				<script>
+				// Timeline initialization: attempts library init, falls back to simple reveal
+				document.addEventListener('DOMContentLoaded', function () {
+				  var el = document.querySelector('.timeline');
+				  if (!el) return;
+
+				  if (window.Timeline && typeof window.Timeline === 'function') {
+				    try { new window.Timeline(el); } catch (e) {}
+				    return;
+				  }
+
+				  if (typeof window.initTimeline === 'function') {
+				    try { window.initTimeline(el); } catch (e) {}
+				    return;
+				  }
+
+									// Minimal JS fallback: use IntersectionObserver for smooth reveals with stagger
+									var items = Array.prototype.slice.call(el.querySelectorAll('.timeline__item'));
+									if ('IntersectionObserver' in window) {
+										var io = new IntersectionObserver(function(entries, obs){
+											entries.forEach(function(entry){
+												if (!entry.isIntersecting) return;
+												var idx = items.indexOf(entry.target);
+												var delay = Math.min(0.25 + idx * 0.08, 0.8); // stagger
+												entry.target.style.transitionDelay = delay + 's';
+												entry.target.classList.add('is-visible');
+												obs.unobserve(entry.target);
+											});
+										}, { root: null, rootMargin: '0px', threshold: 0.1 });
+										items.forEach(function(item){ io.observe(item); });
+									} else {
+										// Fallback for older browsers: simple on-scroll check
+										function onScroll() {
+											items.forEach(function (item, idx) {
+												var r = item.getBoundingClientRect();
+												if (r.top < window.innerHeight * 0.9) {
+													item.style.transitionDelay = Math.min(0.25 + idx * 0.08, 0.8) + 's';
+													item.classList.add('is-visible');
+												}
+											});
+										}
+										onScroll();
+										window.addEventListener('scroll', onScroll);
+									}
+				});
+				</script>
 								</section>
 					</div>
 							
@@ -101,8 +174,7 @@
 				<div id="copyright">
 					<ul>
 						<li><a href="https://www.linkedin.com/in/jessepifko">Jesse D. Pifko</a></li>
-						<li><a href="###">2025 Career Portfolio</a></li>
-						<li><a href="###">Seeking Quality Role</a></li>
+						<li><a href="###">2026 Career Portfolio</a></li>
 					</ul>	
 				</div>
 
@@ -114,6 +186,7 @@
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
+				<script src="dist/js/timeline.prod.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
