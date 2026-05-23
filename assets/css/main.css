@@ -3026,6 +3026,27 @@ input, select, textarea {
 				text-align: center;
 			}
 
+			.certificates header.major {
+				margin-bottom: 1.5rem;
+			}
+
+			.certificates header.major > h2 {
+				margin-bottom: 0.5rem;
+			}
+
+			.certificates header.major > table {
+				margin-top: 0;
+			}
+
+			.reviews .review-block p {
+				margin: 0 0 0.5rem 0;
+			}
+
+			.reviews .reviewer-name {
+				display: block;
+				margin-top: 0;
+			}
+
 			header.major > .date {
 				font-size: 1rem;
 				margin: 0 0 4rem 0;
@@ -3079,6 +3100,23 @@ input, select, textarea {
 		margin: 0 0 2rem 0;
 		width: 100%;
 	}
+
+		.certificates table {
+			border: 1px solid rgba(0, 0, 0, 0.18);
+			border-radius: 0.35rem;
+			overflow: hidden;
+			background-color: rgba(255, 255, 255, 0.95);
+			border-collapse: collapse;
+		}
+
+		.certificates table td {
+			padding: 0.9rem 1rem;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+		}
+
+		.certificates table tr:last-child td {
+			border-bottom: 0;
+		}
 
 		table tbody tr {
 			border: solid 1px;
